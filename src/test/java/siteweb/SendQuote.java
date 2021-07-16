@@ -1,13 +1,11 @@
 package siteweb;
-
 import static org.junit.Assert.assertEquals;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class SendQuote {
-	//Definição dos elementos a serem utilizados
+//Definição dos elementos a serem utilizados
 	WebDriver driver;
 	By email = By.id("email");
 	By phone = By.id("phone");

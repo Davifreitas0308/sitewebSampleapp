@@ -1,12 +1,9 @@
 package siteweb;
 import static org.junit.Assert.assertEquals;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import siteweb.Cenarios;
 public class EnterInsurantData {
 	//Definição dos elementos a serem utilizados na pagina
 	WebDriver driver;

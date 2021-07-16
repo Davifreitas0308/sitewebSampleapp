@@ -2,17 +2,13 @@ package siteweb;
 import static org.junit.Assert.assertEquals;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import siteweb.Cenarios;
-
-
 public class Cenarios {
 	
 //Objetos paginas definidos abaixo
@@ -35,8 +31,7 @@ public class Cenarios {
 	}
 	@After
 	public void after () {
-//		driver.quit();
-		
+		driver.quit();	
 	}
 	
 	@Given("I acess the site sample app")
