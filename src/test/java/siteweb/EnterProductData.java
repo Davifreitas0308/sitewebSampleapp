@@ -2,11 +2,12 @@ package siteweb;
 import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class EnterProductData  {
-	
+	//Definição dos elementos a serem utilizados na pagina
 	WebDriver driver;
 	By startDate = By.id("startdate");
 	By selectInsurance = By.id("insurancesum");
@@ -22,8 +23,9 @@ public class EnterProductData  {
 	}
 
 	public void DataProduct() throws InterruptedException
-	{
-		driver.findElement(By.id("enterproductdata")).click();
+	{   
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+//		driver.findElement(By.id("enterproductdata")).click();
 		assertEquals("Enter Product Data", driver.getTitle());
 		WebElement selectElementInsurance = driver.findElement(selectInsurance);
 		WebElement selectElementMerit = driver.findElement(selectMerit);
@@ -33,12 +35,14 @@ public class EnterProductData  {
 		selectElementInsurance.sendKeys("30.000.000,00");
 		selectElementMerit.sendKeys("Malus 12");
 		selectElementDamageInsurance.sendKeys("Partial Coverage");
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		driver.findElement(OptionalProduct).click();
 		selectElementCourtesy.sendKeys("No");
 		Thread.sleep(1000);
 		driver.findElement(nextButton).click();
-		Thread.sleep(6000);
+		Thread.sleep(2000);
+		jse.executeScript("window.scrollBy(0,-240)");
+		Thread.sleep(1000);
 		
 	}
 	

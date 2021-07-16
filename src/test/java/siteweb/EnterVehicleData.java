@@ -42,7 +42,7 @@ public class EnterVehicleData {
 		    driver.findElement(nextButton).click();
 		    Thread.sleep(1000);
 		    jse.executeScript("window.scrollBy(0,-680)");
-		    Thread.sleep(2000);
+		    Thread.sleep(1000);
 		}
 	
 	}

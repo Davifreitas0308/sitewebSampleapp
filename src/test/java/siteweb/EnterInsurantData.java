@@ -6,9 +6,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import siteweb.Cenario;
+import siteweb.Cenarios;
 public class EnterInsurantData {
-	//Definição dos elementos a serem utilizados
+	//Definição dos elementos a serem utilizados na pagina
 	WebDriver driver;
 	By selectCountryData = By.id("country");
 	By selectOccupationData = By.id("occupation");
@@ -31,7 +31,7 @@ public class EnterInsurantData {
 		WebElement selectCountry = driver.findElement(selectCountryData);
 		WebElement selectOccupation = driver.findElement(selectOccupationData);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		driver.findElement(By.id("enterinsurantdata")).click();
+//		driver.findElement(By.id("enterinsurantdata")).click();
 		assertEquals("Enter Insurant Data", driver.getTitle());
 		driver.findElement(firstName).sendKeys("David");
 		driver.findElement(lastName).sendKeys("Rodrigues");
@@ -50,7 +50,7 @@ public class EnterInsurantData {
 		driver.findElement(nextButton).click();
 		Thread.sleep(1000);
 		jse.executeScript("window.scrollBy(0,-685)");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 	}
 	
