@@ -25,7 +25,8 @@ public class Cenarios {
 	public void before () throws InterruptedException {
 
 		url = "http://sampleapp.tricentis.com/101/app.php";
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\davif\\Documents\\TesteAceenture\\Automacao-DesafioAccenture\\sitewebSampleapp\\drivers\\chome\\91\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+	//	System.setProperty("webdriver.chrome.driver", "C:\\Users\\davif\\Documents\\TesteAceenture\\Automacao-DesafioAccenture\\sitewebSampleapp\\drivers\\chome\\91\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize(); 
