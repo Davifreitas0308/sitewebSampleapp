@@ -7,7 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class EnterProductData  {
-	//Definição dos elementos a serem utilizados na pagina
+//Definição dos elementos a serem utilizados na pagina ao preencher os dados do produto
+	
 	WebDriver driver;
 	By startDate = By.id("startdate");
 	By selectInsurance = By.id("insurancesum");
@@ -25,8 +26,7 @@ public class EnterProductData  {
 	public void DataProduct() throws InterruptedException
 	{   
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-//		driver.findElement(By.id("enterproductdata")).click();
-		assertEquals("Enter Product Data", driver.getTitle());
+		assertEquals("Enter Product Data", driver.getTitle());   // identificador da pagina
 		WebElement selectElementInsurance = driver.findElement(selectInsurance);
 		WebElement selectElementMerit = driver.findElement(selectMerit);
 		WebElement selectElementDamageInsurance = driver.findElement(selecDamage);

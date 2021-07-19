@@ -10,6 +10,7 @@ public class SelectPriceOption {
 	WebDriver driver;
 	By selectPrice = By.xpath("//*[@id=\"priceTable\"]/tfoot/tr/th[2]/label[4]");
 	By nextButton  = By.name("Next (Send Quote)");
+	
 	public SelectPriceOption(WebDriver driver)
 	{
 	this.driver = driver;	
@@ -18,7 +19,7 @@ public class SelectPriceOption {
 	public void  SelectPrice() throws InterruptedException
 	{ 
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		assertEquals("Select Price Option", driver.getTitle());
+		assertEquals("Select Price Option", driver.getTitle()); // identificador da pagina
 		driver.findElement(selectPrice).click();
 		Thread.sleep(1000);
 		jse.executeScript("window.scrollBy(0,280)");

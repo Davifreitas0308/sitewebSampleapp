@@ -20,11 +20,12 @@ public class Cenarios {
 	SelectPriceOption priceselect;
 	SendQuote sendquote;
 	
+	
 	@Before
 	public void before () throws InterruptedException {
 
 		url = "http://sampleapp.tricentis.com/101/app.php";
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\davif\\Documents\\Site1\\Automacao-Site1\\siteweb\\drivers\\chome\\91\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\davif\\Documents\\TesteAceenture\\Automacao-DesafioAccenture\\sitewebSampleapp\\drivers\\chome\\91\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize(); 
@@ -33,7 +34,7 @@ public class Cenarios {
 	public void after () {
 		driver.quit();	
 	}
-	
+// metodo abaixo acessa a pagina inicial 	
 	@Given("I acess the site sample app")
 	public void i_acess_the_site_sample_app() throws InterruptedException {
 	    
@@ -41,38 +42,37 @@ public class Cenarios {
 		driver.navigate().refresh();
 		Thread.sleep(1000);
 	}
-
+// preenche o formulario do veiculo
 	@Given("I fill in the form Vehicle Data tab")
 	public void i_fill_in_the_form_Vehicle_Data_tab() throws InterruptedException {
 		datavehicle = new EnterVehicleData(driver);
 		datavehicle.DataVehicle();
 	}
-	
+// preenche os dados do seguro	
 	@Given("I fill in the form Insurant Data tab")
 	public void i_fill_in_the_form_Insurant_Data_tab() throws InterruptedException {
 		insurantdata = new EnterInsurantData (driver);
-		insurantdata.DataInsurant();
-	    
+		insurantdata.DataInsurant();    
 	}
-	
+// preenche os dados do produto	
 	@Given("I fill in the form Product Data tab")
 	public void i_fill_in_the_form_Product_Data_tab()throws InterruptedException {
 	   productdata = new EnterProductData(driver);
 	   productdata.DataProduct();
 	}
-	
+// seleciona o preço do seguro	
 	@Given("I fill in the form Select Price Option")
 	public void i_fill_in_the_form_Select_Price_Option()throws InterruptedException {
 		priceselect = new SelectPriceOption(driver);
 	    priceselect.SelectPrice();
 	}
-	
+// preenche os dados da cotação	
 	@Given("I fill in the form Send Quote")
 	public void i_fill_in_the_form_Send_Quote() throws InterruptedException{
 		sendquote = new SendQuote(driver);
 		sendquote.QuoteSend();
 	}
-
+// verifica se a mensagem de sucesso é apresentada corretamente 
 	@Then("The message {string} success is showed")
 	public void the_message_Sending_e_mail_success_is_showed(String msg)throws InterruptedException {
 	    msg = driver.findElement(By.xpath("/html/body/div[4]/h2")).getText();

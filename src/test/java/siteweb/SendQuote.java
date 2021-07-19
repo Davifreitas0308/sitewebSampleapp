@@ -5,7 +5,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class SendQuote {
-//Definição dos elementos a serem utilizados
+//Definição dos elementos a serem utilizados ao preencher os dados da cotação
+	
 	WebDriver driver;
 	By email = By.id("email");
 	By phone = By.id("phone");
@@ -22,7 +23,7 @@ public class SendQuote {
 	public void  QuoteSend() throws InterruptedException
 	{ 
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		assertEquals("Send Quote", driver.getTitle());
+		assertEquals("Send Quote", driver.getTitle());  // identificador da pagina
 		Thread.sleep(1000);
 		driver.findElement(email).sendKeys("davifreitas0308@gmail.com");
 		driver.findElement(phone).sendKeys("11950517516");

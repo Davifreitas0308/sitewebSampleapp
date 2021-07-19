@@ -5,7 +5,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 public class EnterVehicleData {
-	//Definição dos elementos a serem utilizados
+//Definição dos elementos a serem utilizados ao preencher os dados do veiculo
+	
     WebDriver driver;
 	By selectMake = By.id("make");
 	By enginePerformace = By.id("engineperformance");
@@ -16,6 +17,7 @@ public class EnterVehicleData {
 	By listPrice = By.id("listprice");
 	By annualMileage = By.id("annualmileage");
     By nextButton = By.name ("Next (Enter Insurant Data)");
+    
 	    public EnterVehicleData(WebDriver driver)
 	    {
 	    	this.driver = driver;
@@ -24,7 +26,7 @@ public class EnterVehicleData {
 		
 		{    
 			JavascriptExecutor jse = (JavascriptExecutor)driver;
-			assertEquals("Enter Vehicle Data", driver.getTitle());
+			assertEquals("Enter Vehicle Data", driver.getTitle());  // identificador da pagina
 		    WebElement selectElementMake = driver.findElement(selectMake);
 		    WebElement selectElementSeats = driver.findElement(numberofSeats);
 		    WebElement selectElementFuel = driver.findElement(selectFuel);

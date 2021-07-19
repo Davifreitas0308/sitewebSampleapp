@@ -5,7 +5,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 public class EnterInsurantData {
-	//Definição dos elementos a serem utilizados na pagina
+//Definição dos elementos a serem utilizados na pagina ao preencher os dados do seguro
+	
 	WebDriver driver;
 	By selectCountryData = By.id("country");
 	By selectOccupationData = By.id("occupation");
@@ -26,10 +27,9 @@ public class EnterInsurantData {
 	public void DataInsurant() throws InterruptedException
 	{   
 		WebElement selectCountry = driver.findElement(selectCountryData);
-		WebElement selectOccupation = driver.findElement(selectOccupationData);
+		WebElement selectOccupation = driver.findElement(selectOccupationData);  
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-//		driver.findElement(By.id("enterinsurantdata")).click();
-		assertEquals("Enter Insurant Data", driver.getTitle());
+		assertEquals("Enter Insurant Data", driver.getTitle());   // identificador da pagina
 		driver.findElement(firstName).sendKeys("David");
 		driver.findElement(lastName).sendKeys("Rodrigues");
 		driver.findElement(birthDate).sendKeys("03/08/1990");
