@@ -19,6 +19,7 @@ public class EnterInsurantData {
     By cityData = By.id("city");
     By hobbieData = By.xpath("//*[@id=\"insurance-form\"]/div/section[2]/div[10]/p/label[1]");
     By nextButton = By.name("Next (Enter Product Data)");
+
     
 	public EnterInsurantData (WebDriver driver)
 	{
@@ -48,6 +49,7 @@ public class EnterInsurantData {
 		Thread.sleep(1000);
 		jse.executeScript("window.scrollBy(0,-685)");
 		Thread.sleep(2000);
+		
 
 	}
 	

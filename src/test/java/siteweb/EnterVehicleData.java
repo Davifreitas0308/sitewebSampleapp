@@ -18,13 +18,15 @@ public class EnterVehicleData {
 	By annualMileage = By.id("annualmileage");
     By nextButton = By.name ("Next (Enter Insurant Data)");
     
+    
 	    public EnterVehicleData(WebDriver driver)
 	    {
 	    	this.driver = driver;
 	    }
-		public void  DataVehicle() throws InterruptedException
-		
+	    
+		public void  DataVehicle(String contador) throws InterruptedException
 		{    
+			
 			JavascriptExecutor jse = (JavascriptExecutor)driver;
 			assertEquals("Enter Vehicle Data", driver.getTitle());  // identificador da pagina
 		    WebElement selectElementMake = driver.findElement(selectMake);
@@ -40,6 +42,7 @@ public class EnterVehicleData {
 		    Thread.sleep(1000);
 		    driver.findElement(listPrice).sendKeys("40000");
 		    driver.findElement(annualMileage).sendKeys("100");
+		    assertEquals("", driver.findElement(By.cssSelector("span[class='counter']")).getText()); //contador
 		    Thread.sleep(1000);
 		    driver.findElement(nextButton).click();
 		    Thread.sleep(1000);
