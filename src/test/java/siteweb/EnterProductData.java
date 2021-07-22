@@ -39,6 +39,7 @@ public class EnterProductData  {
 		driver.findElement(OptionalProduct).click();
 		selectElementCourtesy.sendKeys("No");
 		Thread.sleep(1000);
+		assertEquals("", driver.findElement(By.cssSelector("span[class='counter']")).getText()); //contador
 		driver.findElement(nextButton).click();
 		Thread.sleep(2000);
 		jse.executeScript("window.scrollBy(0,-240)");
