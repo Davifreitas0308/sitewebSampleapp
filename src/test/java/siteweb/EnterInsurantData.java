@@ -45,7 +45,7 @@ public class EnterInsurantData {
 		driver.findElement(hobbieData).click();
 		jse.executeScript("window.scrollBy(0,160)"); 
 		Thread.sleep(1000);
-		assertEquals("5", driver.findElement(By.cssSelector("span[class='counter']")).getText()); //contador
+		assertEquals("", driver.findElement(By.cssSelector("span[class='counter']")).getText()); //contador
 		driver.findElement(nextButton).click();
 		Thread.sleep(1000);
 		jse.executeScript("window.scrollBy(0,-685)");
