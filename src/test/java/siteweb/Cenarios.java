@@ -1,6 +1,10 @@
 package siteweb;
 import static org.junit.Assert.assertEquals;
 import java.util.concurrent.TimeUnit;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,6 +13,8 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import siteweb.Cenarios;
+
+
 public class Cenarios {
 	
 //Objetos paginas definidos abaixo
@@ -20,34 +26,36 @@ public class Cenarios {
 	SelectPriceOption priceselect;
 	SendQuote sendquote;
 	
-	
 	@Before
 	public void before () throws InterruptedException {
 
 		url = "http://sampleapp.tricentis.com/101/app.php";
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-	//	System.setProperty("webdriver.chrome.driver", "C:\\Users\\davif\\Documents\\TesteAceenture\\Automacao-DesafioAccenture\\sitewebSampleapp\\drivers\\chome\\91\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize(); 
 	}
+	
 	@After
 	public void after () {
 		driver.quit();	
 	}
 // metodo abaixo acessa a pagina inicial 	
+	
+	
 	@Given("I acess the site sample app")
 	public void i_acess_the_site_sample_app() throws InterruptedException {
 	    
 		driver.get(url);
 		driver.navigate().refresh();
 		Thread.sleep(1000);
+		
 	}
 // preenche o formulario do veiculo
 	@Given("I fill in the form Vehicle Data tab")
 	public void i_fill_in_the_form_Vehicle_Data_tab() throws InterruptedException {
 		datavehicle = new EnterVehicleData(driver);
-		datavehicle.DataVehicle();
+		datavehicle.DataVehicle(url);
 	}
 // preenche os dados do seguro	
 	@Given("I fill in the form Insurant Data tab")

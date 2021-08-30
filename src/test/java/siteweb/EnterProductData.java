@@ -31,7 +31,7 @@ public class EnterProductData  {
 		WebElement selectElementMerit = driver.findElement(selectMerit);
 		WebElement selectElementDamageInsurance = driver.findElement(selecDamage);
 		WebElement selectElementCourtesy = driver.findElement(selecCourtesyCar);
-		driver.findElement(startDate).sendKeys("08/27/2021");
+		driver.findElement(startDate).sendKeys("11/27/2021");
 		selectElementInsurance.sendKeys("30.000.000,00");
 		selectElementMerit.sendKeys("Malus 12");
 		selectElementDamageInsurance.sendKeys("Partial Coverage");

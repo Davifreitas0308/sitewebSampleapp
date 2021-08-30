@@ -12,3 +12,5 @@ Scenario: CN_01 Happy way
     And  I fill in the form Select Price Option 
     And  I fill in the form Send Quote
     Then The message "" success is showed
+    
+    
