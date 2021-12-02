@@ -16,7 +16,8 @@ public class Cenarios {
 	String url;
 	EnterVehicleData datavehicle;
 	EnterInsurantData insurantdata;
-	EnterProductData  productdata;
+	EnterTruckData  truckdata;
+	EnterProductData productdata;
 	SelectPriceOption priceselect;
 	SendQuote sendquote;
 	
@@ -25,7 +26,7 @@ public class Cenarios {
 	public void before () throws InterruptedException {
 
 		url = "http://sampleapp.tricentis.com/101/app.php";
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "chromedriver2.exe");
 	//	System.setProperty("webdriver.chrome.driver", "C:\\Users\\davif\\Documents\\TesteAceenture\\Automacao-DesafioAccenture\\sitewebSampleapp\\drivers\\chome\\91\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -35,6 +36,15 @@ public class Cenarios {
 	public void after () {
 		driver.quit();	
 	}
+	
+	@Given("I acess the site sample app truck menu")
+	public void i_acess_the_site_sample_app_truck_menu() throws InterruptedException {
+		driver.get(url);
+		truckdata = new EnterTruckData(driver);
+		truckdata.DataTruck();
+		Thread.sleep(1000);
+	}
+	
 // metodo abaixo acessa a pagina inicial 	
 	@Given("I acess the site sample app")
 	public void i_acess_the_site_sample_app() throws InterruptedException {
